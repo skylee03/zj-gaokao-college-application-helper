@@ -34,7 +34,6 @@ jobs:
           mv $temp_dir/temp/.git $temp_dir
           rm -rf $temp_dir/temp
           mv public/* $temp_dir
-          mv LICENSE $temp_dir
           # Go to the temporary directory
           cd $temp_dir
           # Set commit identity
@@ -43,7 +42,7 @@ jobs:
           # Publish
           git add .
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Publish `TZ='Asia/Hong_Kong' date`"
+            git commit -m "Publish `TZ='Asia/Shanghai' date`"
             git push -f origin gh-pages
           fi
           )
